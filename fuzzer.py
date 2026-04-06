@@ -1,5 +1,4 @@
 import requests
-import time 
 
 with open(file = 'word_list.txt',mode= 'r',encoding= 'UTF-8') as words:
     
