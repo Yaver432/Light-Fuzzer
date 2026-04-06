@@ -15,9 +15,9 @@ def Fuzz():
         Url_nova = str(f"{Url}" + f"{palavra}")
 
         try:
-            r = requests.get(f"{Url_nova}")
-        except:
-            r.status_code == 400
+            r = requests.get(url_nova, timeout=5)
+        except requests.RequestException as e:
+            print(f"[-] Error requesting {url_nova}: {e}")
             continue
 
         if r.status_code == 200:
